@@ -2,6 +2,12 @@
 
 **원유·천연가스·전력의 뉴스 위험지수와 시장 간 위험 전이**
 
+POSTECH AIRM Research Group · **김종엽 · 배현우**
+
+[발표 미리보기](PRESENTATION.md) · [PowerPoint 다운로드 · 대본 포함](reports/dgri_roll30_daily.pptx)
+
+[![DGRI 공동 연구 발표](assets/slide-01.png)](PRESENTATION.md)
+
 [1. 뉴스 수집](src/01_collect_event_risk.py) · [2. DGRI 구성](src/02_build_dgri.py) · [3. 위험 전이 분석](src/03_analyze_risk_transmission.py)
 
 ## 연구 질문
@@ -37,7 +43,18 @@ flowchart LR
 
 EventRisk 결측일에는 새 충격을 추가하지 않고 기존 상태를 감쇠한다. 자료 미수집, 부분 수집, 실제 0을 구분한다.
 
-이 저장소는 분석 코드 중심이며 결과 보고서나 성과 통계는 포함하지 않는다.
+## 발표 결과
+
+| 비교 | 결과 |
+|---|---|
+| Pure Test의 상대적 전달자 | Power 31 / 32일 |
+| 30일 이동창 평균 TCI | Train 18.1% → Pure Test 13.6% |
+| 2025-05-31 최신 이동창 | 상대적 전달자가 Oil로 전환 |
+| 마지막 날 Oil NET | +3.69pp · 95% bootstrap 구간 [−28.64, 31.04] |
+
+출처: 공동 발표자료 10·11·16쪽. Pure Test는 이동창 전체가 Test에 포함되는 2025-04-30–05-31이다. 짧은 표본과 넓은 신뢰구간 때문에 전달자 변화는 탐색적 연결성 결과로 해석한다. 구조적 인과관계나 확정된 체제 전환을 뜻하지 않는다.
+
+![30일 일별 순전달자 변화 · 발표 10쪽](assets/slide-10.png)
 
 <details>
 <summary>실행 의존성</summary>
